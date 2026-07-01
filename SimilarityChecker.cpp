@@ -13,18 +13,17 @@ public:
 		{
 			return 40;
 		}
-		else if (length1 == 5 && length1 - length2 == 4)
+		else
 		{
-			return 0;
+			int gap = length1 - length2;
+			if (gap > length2)
+				return 0;
+			if (length1 == 0)
+				return 0;
+			double score = ((double)gap / length2) * 40;
+			return score;
 		}
-		else if (length1 == 5 && length1 - length2 == 1)
-		{
-			return 10;
-		}
-		else if (length1 == 5 && length1 - length2 == 3)
-		{
-			return 30;
-		}
+
 			
 		return 0;
 	}

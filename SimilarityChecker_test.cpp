@@ -40,5 +40,5 @@ TEST_F(SimilarityCheckTest, Input1_5_Input2_4) {
 TEST_F(SimilarityCheckTest, Input1_5_Input2_2) {
 	int score = checker.checkSimilarity("AAAAA", "BB");
 
-	EXPECT_EQ(30, score);
+	EXPECT_EQ(0, score);
 }
