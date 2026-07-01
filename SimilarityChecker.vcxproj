@@ -140,6 +140,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SimilarityChecker.cpp" />
+    <ClCompile Include="SimilarityChecker_test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
