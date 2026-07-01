@@ -6,8 +6,12 @@ class SimilarityChecker {
 public:
 	int checkSimilarity(string input1, string input2)
 	{
-		//	step 1 length
+		int lenngth1 = input1.length();
+		int lenngth2 = input2.length();
 
-		return 0;
+		if (lenngth1 == lenngth2)
+			return 40;
+		else
+		    return 0;
 	}
 };
