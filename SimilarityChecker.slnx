@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="SimilarityChecker.vcxproj" />
+  <Project Path="SimilarityChecker.vcxproj" Id="bb0ecad0-82c8-4c5c-9603-089913dc1d3e" />
 </Solution>
