@@ -37,10 +37,6 @@ public:
 		int TotalCnt = 0;
 		if (input1.compare(input2) == 0)
 			return MAX_SCORE_ALPHA;
-		if (input1.length() == 0)
-			return 0;
-		if (input2.length() == 0)
-			return 0;
 		for (char ch = 'A'; ch < 'Z'; ch++)
 		{
 			if (input1.find(ch) != std::string::npos)
@@ -54,8 +50,8 @@ public:
 			else if(input2.find(ch) != std::string::npos)
 				TotalCnt++;
 		}
-		double score = ((double)SameCnt / TotalCnt) * MAX_SCORE_ALPHA;
-		return score;
+
+		return ((double)SameCnt / TotalCnt) * MAX_SCORE_ALPHA;;
 	}
 
 	double getGap(int length1, int length2)
