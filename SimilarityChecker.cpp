@@ -16,7 +16,6 @@ public:
 	{
 		int length1 = LeftString.length();
 		int length2 = RightString.length();
-
 		
 		if (length1 == length2) {
 			if (length1 == 0)
@@ -60,5 +59,5 @@ public:
 	double getGap(int length1, int length2)
 	{
 		return (double)length1 - length2;
-	}
+	}	
 };
