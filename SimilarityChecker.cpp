@@ -13,24 +13,24 @@ public:
 		{
 			return 40;
 		}
-		if (length2 > length1)
-		{
-			//swap
-			int temp = length1;
-			length1 = length2;
-			length2 = temp;
-		}
+		if (length2 > length1) swap(length1, length2);
 
-		int gap = length1 - length2;
-		if (gap > length2)
+		if (length1 >= (length2 * 2))
 			return 0;
-		if (length1 == 0)
-			return 0;
+		int gap = getGap(length1, length2);
+
 		double score = ((double)gap / length2) * 40;
 		return score;
+	}
+	int getGap(int length1, int length2)
+	{
+		return length1 - length2;
+	}
 
-
-			
-		return 0;
+	void swap(int& num1, int& num2)
+	{
+		int temp = num1;
+		num1 = num2;
+		num2 = temp;
 	}
 };
