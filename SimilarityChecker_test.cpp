@@ -74,3 +74,9 @@ TEST_F(SimilarityCheckTest, LeftString_AA_RightString_AE) {
 
 	EXPECT_EQ(80, score);
 }
+
+TEST_F(SimilarityCheckTest, LeftString_None_RightString_None) {
+	int score = checker.checkSimilarity("", "");
+
+	EXPECT_EQ(0, score);
+}

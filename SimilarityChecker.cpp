@@ -17,7 +17,12 @@ public:
 		int length1 = LeftString.length();
 		int length2 = RightString.length();
 
-		if (length1 == length2)	return MAX_SCORE_LENGTH;
+		
+		if (length1 == length2) {
+			if (length1 == 0)
+				return 0;
+			return MAX_SCORE_LENGTH;
+		}
 
 		if (length2 > length1) swap(length1, length2);
 		if (length1 >= (length2 * 2)) return 0;
@@ -47,6 +52,8 @@ public:
 				TotalCnt++;
 		}
 
+		if (TotalCnt == 0)
+			return 0;
 		return ((double)SameCnt / TotalCnt) * MAX_SCORE_ALPHA;;
 	}
 
