@@ -13,7 +13,7 @@ public:
 		{
 			return 40;
 		}
-		else
+		else if(length1 > length2)
 		{
 			int gap = length1 - length2;
 			if (gap > length2)
@@ -23,7 +23,16 @@ public:
 			double score = ((double)gap / length2) * 40;
 			return score;
 		}
-
+		else
+		{
+			int gap = length2 - length1;
+			if (gap > length1)
+				return 0;
+			if (length2 == 0)
+				return 0;
+			double score = ((double)gap / length1) * 40;
+			return score;
+		}
 			
 		return 0;
 	}
