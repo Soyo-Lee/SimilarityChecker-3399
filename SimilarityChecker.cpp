@@ -12,9 +12,7 @@ public:
 		if (length1 == length2)	return 40;
 		if (length2 > length1) swap(length1, length2);
 		if (length1 >= (length2 * 2)) return 0;
-
-		double score = (getGap(length1, length2) / length2) * 40;
-		return score;
+		return (getGap(length1, length2) / length2) * 40;
 	}
 
 	void swap(int& num1, int& num2)
