@@ -1,21 +1,25 @@
 #include "gmock/gmock.h"
 #include "SimilarityChecker.cpp"
 
-TEST(SimilarityCheck, Input1_Null) {
+using namespace testing;
+class SimilarityCheckTest : public testing::Test {
+public:
 	SimilarityChecker checker;
+};
+
+TEST_F(SimilarityCheckTest, Input1_Null) {
 	int score = checker.checkSimilarity("", "AAA");
 
 	EXPECT_EQ(0, score);
 }
 
-TEST(SimilarityCheck, Input2_Null) {
-	SimilarityChecker checker;
+TEST_F(SimilarityCheckTest, Input2_Null) {
 	int score = checker.checkSimilarity("AAA","");
 
 	EXPECT_EQ(0, score);
 }
-TEST(SimilarityCheck, INPUT_SAME_LENGTH) {
-	SimilarityChecker checker;
+
+TEST_F(SimilarityCheckTest, INPUT_SAME_LENGTH) {
 	int score = checker.checkSimilarity("AAA", "BBB");
 
 	EXPECT_EQ(40, score);

@@ -11,7 +11,6 @@ public:
 
 		if (lenngth1 == lenngth2)
 			return 40;
-		else
-		    return 0;
+		return 0;
 	}
 };
