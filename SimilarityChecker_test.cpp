@@ -4,6 +4,7 @@
 using namespace testing;
 class SimilarityCheckTest : public testing::Test {
 public:
+	static const int MAX_SCORE_LENGTH = 60;
 	SimilarityChecker checker;
 };
 
@@ -22,7 +23,7 @@ TEST_F(SimilarityCheckTest, Input2_Null) {
 TEST_F(SimilarityCheckTest, INPUT_SAME_LENGTH) {
 	int score = checker.checkSimilarity("AAA", "BBB");
 
-	EXPECT_EQ(40, score);
+	EXPECT_EQ(MAX_SCORE_LENGTH, score);
 }
 
 TEST_F(SimilarityCheckTest, Input1_5_Input2_1) {
@@ -34,7 +35,7 @@ TEST_F(SimilarityCheckTest, Input1_5_Input2_1) {
 TEST_F(SimilarityCheckTest, Input1_5_Input2_4) {
 	int score = checker.checkSimilarity("AAAAA", "BBBB");
 
-	EXPECT_EQ(10, score);
+	EXPECT_EQ(15, score);
 }
 
 TEST_F(SimilarityCheckTest, Input1_5_Input2_2) {
@@ -46,5 +47,5 @@ TEST_F(SimilarityCheckTest, Input1_5_Input2_2) {
 TEST_F(SimilarityCheckTest, Input1_4_Input2_5) {
 	int score = checker.checkSimilarity("AAAA", "BBBBB");
 
-	EXPECT_EQ(10, score);
+	EXPECT_EQ(15, score);
 }
