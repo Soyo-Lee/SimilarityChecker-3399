@@ -10,7 +10,14 @@ public:
 		int lenngth2 = input2.length();
 
 		if (lenngth1 == lenngth2)
+		{
 			return 40;
+		}
+		else if (lenngth1 - lenngth2)
+		{
+			return 0;
+		}
+			
 		return 0;
 	}
 };
