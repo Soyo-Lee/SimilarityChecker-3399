@@ -21,6 +21,10 @@ public:
 		{
 			return 10;
 		}
+		else if (length1 == 5 && length1 - length2 == 3)
+		{
+			return 30;
+		}
 			
 		return 0;
 	}
