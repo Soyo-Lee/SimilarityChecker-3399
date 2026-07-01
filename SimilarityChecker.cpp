@@ -13,7 +13,7 @@ public:
 		if (length1 == length2)	return MAX_SCORE_LENGTH;
 		if (length2 > length1) swap(length1, length2);
 		if (length1 >= (length2 * 2)) return 0;
-		return (getGap(length1, length2) / length2) * MAX_SCORE_LENGTH;
+		return (1 - getGap(length1, length2) / length2) * MAX_SCORE_LENGTH;
 	}
 
 	void swap(int& num1, int& num2)
