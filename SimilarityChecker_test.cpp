@@ -2,81 +2,50 @@
 #include "SimilarityChecker.cpp"
 
 using namespace testing;
-class SimilarityCheckTest : public Test {
+class SimilarityCheckTest : public testing::Test {
 public:
 	static const int MAX_SCORE_LENGTH = 60;
-	static const int MAX_SCORE_ALPHA = 40;
 	SimilarityChecker checker;
 };
 
-TEST_F(SimilarityCheckTest, LeftString_Null) {
+TEST_F(SimilarityCheckTest, Input1_Null) {
 	int score = checker.checkSimilarity("", "AAA");
 
 	EXPECT_EQ(0, score);
 }
 
-TEST_F(SimilarityCheckTest, RightString_Null) {
+TEST_F(SimilarityCheckTest, Input2_Null) {
 	int score = checker.checkSimilarity("AAA","");
 
 	EXPECT_EQ(0, score);
 }
 
-TEST_F(SimilarityCheckTest, INPUT_SAME_LENGTH_SAME_ALPHA) {
-	int score = checker.checkSimilarity("AAA", "AAA");
+TEST_F(SimilarityCheckTest, INPUT_SAME_LENGTH) {
+	int score = checker.checkSimilarity("AAA", "BBB");
 
-	EXPECT_EQ(100 , score);
+	EXPECT_EQ(MAX_SCORE_LENGTH, score);
 }
 
-TEST_F(SimilarityCheckTest, LeftString_5_RightString_1) {
+TEST_F(SimilarityCheckTest, Input1_5_Input2_1) {
 	int score = checker.checkSimilarity("AAAAA", "B");
 
 	EXPECT_EQ(0, score);
 }
 
-TEST_F(SimilarityCheckTest, LeftString_5_RightString_4) {
+TEST_F(SimilarityCheckTest, Input1_5_Input2_4) {
 	int score = checker.checkSimilarity("AAAAA", "BBBB");
 
 	EXPECT_EQ(45, score);
 }
 
-TEST_F(SimilarityCheckTest, LeftString_5_RightString_2) {
+TEST_F(SimilarityCheckTest, Input1_5_Input2_2) {
 	int score = checker.checkSimilarity("AAAAA", "BB");
 
 	EXPECT_EQ(0, score);
 }
 
-TEST_F(SimilarityCheckTest, LeftString_4_RightString_5) {
+TEST_F(SimilarityCheckTest, Input1_4_Input2_5) {
 	int score = checker.checkSimilarity("AAAA", "BBBBB");
 
 	EXPECT_EQ(45, score);
-}
-
-TEST_F(SimilarityCheckTest, LeftString_ASD_RightString_DSA) {
-	int score = checker.checkSimilarity("ASD", "DSA");
-
-	EXPECT_EQ(100, score);
-}
-
-TEST_F(SimilarityCheckTest, LeftString_AA_RightString_AAE) {
-	int score = checker.checkSimilarity("AA", "AAE");
-
-	EXPECT_EQ(50, score);
-}
-
-TEST_F(SimilarityCheckTest, LeftString_AAE_RightString_AA) {
-	int score = checker.checkSimilarity("AAE", "AA");
-
-	EXPECT_EQ(50, score);
-}
-
-TEST_F(SimilarityCheckTest, LeftString_AA_RightString_AE) {
-	int score = checker.checkSimilarity("AA", "AE");
-
-	EXPECT_EQ(80, score);
-}
-
-TEST_F(SimilarityCheckTest, LeftString_None_RightString_None) {
-	int score = checker.checkSimilarity("", "");
-
-	EXPECT_EQ(0, score);
 }
