@@ -39,7 +39,7 @@ public:
 		int SameCnt = 0;
 		int TotalCnt = 0;
 		
-		for (char ch = 'A'; ch < 'Z'; ch++)
+		for (char ch = 'A'; ch <= 'Z'; ch++)
 		{
 			if (LeftString.find(ch) != string::npos)
 			{
