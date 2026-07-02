@@ -80,3 +80,9 @@ TEST_F(SimilarityCheckTest, LeftString_None_RightString_None) {
 
 	EXPECT_EQ(0, score);
 }
+
+TEST_F(SimilarityCheckTest, LeftString_AA_RightString_AZ) {
+	int score = checker.checkSimilarity("AA", "AZ");
+
+	EXPECT_EQ(80, score);
+}
